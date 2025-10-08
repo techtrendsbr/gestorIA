@@ -76,7 +76,20 @@ body {
 /* --- HERO SECTION (NOVO LAYOUT) --- */
 .hero {
     padding: 180px 0 100px;
-    background: var(--background-dark);
+    position: relative; /* Adicionado para garantir o empilhamento correto */
+    
+    /* --- INÍCIO DA ALTERAÇÃO --- */
+    /* A linha abaixo aplica um gradiente escuro semi-transparente SOBRE a imagem 
+      para garantir que o texto branco continue legível. 
+      Altere a URL pela imagem que você deseja usar.
+    */
+    background: linear-gradient(rgba(13, 13, 18, 0.75), rgba(13, 13, 18, 0.75)), url('https://res.cloudinary.com/dabmzfood/image/upload/v1759954214/Gemini_Generated_Image_e50pz8e50pz8e50p_cjgdgd.png');
+    
+    background-size: cover; /* Faz a imagem cobrir toda a área da seção */
+    background-position: center; /* Centraliza a imagem na seção */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-attachment: fixed; /* Opcional: Cria um efeito parallax ao rolar a página */
+    /* --- FIM DA ALTERAÇÃO --- */
 }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
 .hero-text-content { text-align: left; }
@@ -129,7 +142,7 @@ body {
 .testimonial-quote strong { color: var(--text-light); }
 
 /* --- CTA E FOOTER --- */
-.cta-image-content img { width: 35%; margin-bottom: 10px; }
+.cta-image-content img { width: 45%; margin-bottom: 10px; }
 .cta-final-section { padding: 100px 0; text-align: center; background-color: var(--background-dark); }
 .cta-btn { display: inline-block; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; cursor: pointer; border: none; margin-top: 30px; }
 .cta-btn-primary { background: var(--primary-color); color: var(--text-dark); box-shadow: 0 4px 20px rgba(167, 64, 226, 0.3);}
@@ -158,7 +171,7 @@ body {
     .workshop-grid, .testimonials-grid { grid-template-columns: 1fr; gap: 25px; }
     .workshop-image-content { order: 1; margin-bottom: 40px;  margin-left: auto; margin-right: auto; }
     .testimonials-grid { max-width: 400px; margin: 0 auto; }
-    .cta-image-content { order: 1; margin-bottom: 40px;  margin-left: auto; margin-right: auto; }    
+    .cta-image-content { order: 1; margin-bottom: 40px;  max-width: 800px; margin-left: auto; margin-right: auto; }    
     .footer-content { grid-template-columns: 1fr; }
 }
 
